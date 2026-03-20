@@ -1,0 +1,25 @@
+nav {
+    background: var(--white);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+    .logo { 
+        font-weight: 600; 
+        font-size: 1.4rem; 
+        color: var(--primary); 
+        text-decoration: none; 
+    }
+
+    .links a { 
+        color: var(--text-light); 
+        margin-left: 20px; 
+        text-decoration: none; 
+        font-size: 0.95rem; 
+        transition: 0.3s;
+
+        &:hover { color: var(--primary); }
+    }
+}

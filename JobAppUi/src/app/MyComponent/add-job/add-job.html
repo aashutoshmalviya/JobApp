@@ -1,0 +1,49 @@
+<div class="container" style="max-width: 700px;">
+    <div class="card">
+        <h2 style="margin-top:0">Post a New Role</h2>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">Fill in the technical requirements for this position.
+        </p>
+
+        <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <label>Job Profile (Title)</label>
+                    <input type="text" formControlName="jobName" placeholder="e.g. Backend Developer" required>
+                </div>
+            </div>
+
+            <label>Required Experience (Years)</label>
+            <input type="number" formControlName="reqExp" placeholder="e.g. 3" min="0" required>
+
+            <label>Description</label>
+            <textarea formControlName="jobDesc" rows="4" placeholder="Detail the responsibilities..."></textarea>
+
+            <div class="tech-stack-container">
+                <label>Tech Stack</label>
+
+                <input type="text" placeholder="🔍 Search skills (e.g. Java, AWS)..." style="margin-bottom: 0;"
+                    [value]="searchTerm()" (input)="onSearch($event)">
+
+                <div class="multi-select-list">
+
+                    @for (s of filteredTechStack(); track s) {
+
+                    <div class="option-item" [class.selected]="selectedStacks().includes(s)"
+                        (click)="toggleSelection(s)">
+                        {{ s }}
+                    </div>
+
+                    } @empty {
+                    <div style="padding: 10px; color: var(--text-light);">
+                        No skills match your search.
+                    </div>
+                    }
+
+                </div>
+                <small style="color: var(--text-light); font-style: italic;">Click items to toggle selection.</small>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Publish Job</button>
+        </form>
+    </div>
+</div>

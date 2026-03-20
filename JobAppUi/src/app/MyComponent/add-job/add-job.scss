@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  --primary: #4CAF50;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+  max-width: 700px;
+  margin: 3rem auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+input, textarea, .multi-select-list {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Custom Multi-Select Styling */
+.multi-select-list {
+  height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+  background: #fcfcfd;
+}
+
+.option-item {
+  padding: 10px 15px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.option-item:hover {
+  background-color: #f1f5f9;
+}
+
+.option-item.selected {
+  background: var(--primary);
+  color: white;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}

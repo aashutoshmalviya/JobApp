@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #4CAF50;
+    --primary-hover: #45a049;
+    --bg: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+// Global Layout Containers
+.container { max-width: 900px; margin: 3rem auto; padding: 0 20px; }
+.card { background: var(--white); padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+
+// Global Buttons
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+
+    &:hover { 
+        background: var(--primary-hover); 
+        transform: translateY(-1px); 
+        box-shadow: 0 4px 12px rgba(158, 158, 158, 0.3); 
+    }
+}
+
+.btn-outline { 
+    background: transparent; 
+    border: 1px solid var(--border); 
+    color: var(--text-dark); 
+
+    &:hover { background: #f1f5f9; }
+}

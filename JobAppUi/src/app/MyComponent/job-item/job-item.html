@@ -1,0 +1,19 @@
+<div class="job-item">
+        <div style="flex: 1;">
+            <span class="tag">Exp: {{job().reqExp}}+ Years</span>
+            <h3 style="margin: 10px 0 5px 0;">{{job().jobName}}</h3>
+            <p style="margin: 0 0 12px 0; color: var(--text-light); font-size: 0.9rem;">
+                Job ID: #{{job().jobId}}<br>
+                Job Description: {{job().jobDesc}}
+            </p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                @for (tech of job().techStack; track tech) {
+                <span class="tag" style="background: #eef2ff; color: var(--primary); border: none;">
+                    {{tech}}
+                </span>
+                }
+            </div>
+        </div>
+        <a routerLink="/apply/{{job().jobId}}" class="btn btn-outline">Apply</a>
+</div>

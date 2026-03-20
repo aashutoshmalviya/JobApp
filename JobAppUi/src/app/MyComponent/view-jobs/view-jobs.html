@@ -1,0 +1,30 @@
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1>Current Openings</h1>
+        <span style="color: var(--text-light)">Showing jobs</span>
+    </div>
+    @for (job of jobs(); track job.jobId) {
+    <app-job-item [job]=job></app-job-item>
+    } @empty {
+    <div class="card" style="text-align: center; padding: 3rem;">
+        <p style="color: var(--text-light);">No jobs posted yet. Be the first!</p>
+        <a routerLink="/addJobs" class="btn">Post a Job</a>
+    </div>
+    }
+</div>
+<!-- <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+
+    
+    @if ({{currentPage}} > 1) { 
+        <a routerLink="/viewJobs?page={{currentPage}} - 1" class="btn btn-outline">Previous</a>
+    }
+
+    
+    <div style="display: flex; align-items: center; gap: 5px;">
+        <span>Page <strong>{{currentPage}} %></strong> of {{totalPages}} %></span>
+    </div>
+    @if ({{currentPage}} < {totalPages}})) { %>
+        <a href="viewJobs?page=<%= (Integer)request.getAttribute("currentPage") + 1 %>" class="btn btn-outline">Next</a>
+    <% } %>
+
+</div> -->
